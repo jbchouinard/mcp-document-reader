@@ -1,0 +1,61 @@
+[tool.poetry]
+name = "mcp-document-reader"
+version = "0.1.1"
+description = "A MCP Server for reading PDF and EPUB files."
+authors = ["Jerome Boisvert-Chouinard <me@jbchouinard.net>"]
+readme = "README.md"
+packages = [{include = "mcp_document_reader"}]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<4"
+rich = ">=13.9.4,<14.0.0"
+mcp = {extras = ["cli"], version = "^1.3.0"}
+ebooklib = "^0.18"
+beautifulsoup4 = "^4.13.3"
+pypdf = "^5.3.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=8.3.5"
+ruff = ">=0.9.9"
+pudb = "^2024.1.3"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+mcp-document-reader = "mcp_document_reader.server:run_server"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+# Enable auto-fixing
+fix = true
+# Enable automatic sorting of imports
+unsafe-fixes = false
+
+[tool.ruff.lint]
+select = ["E", "F", "B", "I", "N", "W"]
+ignore = []
+exclude = [
+    ".git",
+    ".ruff_cache",
+    "__pycache__",
+    "dist",
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["mcp_document_reader"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+
+[tool.basedpyright]
+include = ["mcp_document_reader"]
+typeCheckingMode = "basic"
+reportPrivateUsage = false
+reportIgnoreCommentWithoutRule = false
+reportExplicitAny = false
+reportRedeclaration = false
+reportAny = false
