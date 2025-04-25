@@ -1,4 +1,5 @@
 # mcp-document-reader
+[![smithery badge](https://smithery.ai/badge/@jbchouinard/mcp-document-reader)](https://smithery.ai/server/@jbchouinard/mcp-document-reader)
 
 A rudimentary [MCP server](https://modelcontextprotocol.io/introduction) for interacting with PDF and EPUB documents.
 
@@ -6,6 +7,14 @@ I use this with [Windsurf IDE by Codeium](https://codeium.com/windsurf), which
 only supports MCP tools, not resources.
 
 ## Installation
+
+### Installing via Smithery
+
+To install Document Reader for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@jbchouinard/mcp-document-reader):
+
+```bash
+npx -y @smithery/cli install @jbchouinard/mcp-document-reader --client claude
+```
 
 ### Requirements
 
