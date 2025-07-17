@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/jbchouinard-mcp-document-reader-badge.jpg)](https://mseep.ai/app/jbchouinard-mcp-document-reader)
+
 # mcp-document-reader
 
 A rudimentary [MCP server](https://modelcontextprotocol.io/introduction) for interacting with PDF and EPUB documents.
